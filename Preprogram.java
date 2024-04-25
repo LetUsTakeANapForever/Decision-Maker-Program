@@ -9,7 +9,7 @@ public class Preprogram extends JFrame implements ActionListener {
     Container cp;
 
     public Preprogram() {
-        super("Decision Maker");
+        super("Decision Maker Program");
         Initial();
         setComponent();
         Finally();
@@ -18,12 +18,7 @@ public class Preprogram extends JFrame implements ActionListener {
     public void Initial() {
         cp = getContentPane();
         cp.setLayout(new BorderLayout());
-        p1 = new JPanel();
-        p1.setLayout(new FlowLayout());
-        p1.setBackground(new Color(82, 109, 130));
-        p2 = new JPanel();
-        p2.setLayout(new BorderLayout());
-        p2.setBackground(new Color(82, 109, 130));
+        setPanels();
     }
 
     public void setComponent() {
@@ -56,5 +51,14 @@ public class Preprogram extends JFrame implements ActionListener {
             this.setVisible(false);
             new QualityImportance();
         }
+    }
+
+    public void setPanels() {
+        p1 = new JPanel();
+        p1.setLayout(new FlowLayout());
+        p1.setBackground(new Color(82, 109, 130));
+        p2 = new JPanel();
+        p2.setLayout(new BorderLayout());
+        p2.setBackground(new Color(82, 109, 130));
     }
 }

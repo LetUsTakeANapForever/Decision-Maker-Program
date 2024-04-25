@@ -1,6 +1,8 @@
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
+import java.util.HashMap;
+import java.util.Map;
 
 public class Choice1 extends JFrame implements ActionListener {
     Container cp;
@@ -11,8 +13,10 @@ public class Choice1 extends JFrame implements ActionListener {
     JComboBox<String> rateq1, rateq2, rateq3, rateq4;
     String qi1toC2, qi2toC2, qi3toC2, qi4toC2;
     int v1q1, v1q2, v1q3, v1q4, i1, i2, i3, i4;
-    
+    Map<String, Integer> ratingmap;
+
     public Choice1(QualityImportance qticlass) {
+        setRating();
         Initial();
         setComponent(qticlass);
         Finally();
@@ -37,13 +41,13 @@ public class Choice1 extends JFrame implements ActionListener {
         q4 = new JLabel(qticlass.qi4.getText() + "   :    ");
         q4.setFont(new Font("Arundina Sans", Font.BOLD, 30));
         rateq1 = new JComboBox<>();
-        rateq1.addItem("Rate");
+        rateq1.addItem("rate");
         rateq2 = new JComboBox<>();
-        rateq2.addItem("Rate");
+        rateq2.addItem("rate");
         rateq3 = new JComboBox<>();
-        rateq3.addItem("Rate");
+        rateq3.addItem("rate");
         rateq4 = new JComboBox<>();
-        rateq4.addItem("Rate");
+        rateq4.addItem("rate");
         for (int i = 1; i < 6; i++) {
             rateq1.addItem(i + "");
             rateq2.addItem(i + "");
@@ -105,68 +109,34 @@ public class Choice1 extends JFrame implements ActionListener {
         }
     }
 
+    public void setRating() {
+        ratingmap = new HashMap<>();
+        ratingmap.put("rate", 0);
+        ratingmap.put("1", 1);
+        ratingmap.put("2", 2);
+        ratingmap.put("3", 3);
+        ratingmap.put("4", 4);
+        ratingmap.put("5", 5);
+    }
+
     public void setValueofRating1() {
-        if (rateq1.getSelectedItem().equals("1")) {
-            v1q1 = 1;
-        } else if (rateq1.getSelectedItem().equals("2")) {
-            v1q1 = 2;
-        } else if (rateq1.getSelectedItem().equals("3")) {
-            v1q1 = 3;
-        } else if (rateq1.getSelectedItem().equals("4")) {
-            v1q1 = 4;
-        } else if (rateq1.getSelectedItem().equals("5")) {
-            v1q1 = 5;
-        } else if (rateq1.getSelectedItem().equals("Rate")) {
-            v1q1 = 0;
-        }
+        String selectedRate = String.valueOf(rateq1.getSelectedItem());
+        v1q1 = ratingmap.get(selectedRate);
     }
 
     public void setValueofRating2() {
-        if (rateq2.getSelectedItem().equals("1")) {
-            v1q2 = 1;
-        } else if (rateq2.getSelectedItem().equals("2")) {
-            v1q2 = 2;
-        } else if (rateq2.getSelectedItem().equals("3")) {
-            v1q2 = 3;
-        } else if (rateq2.getSelectedItem().equals("4")) {
-            v1q2 = 4;
-        } else if (rateq2.getSelectedItem().equals("5")) {
-            v1q2 = 5;
-        } else if (rateq2.getSelectedItem().equals("Rate")) {
-            v1q2 = 0;
-        }
+        String selectedRate = String.valueOf(rateq2.getSelectedItem());
+        v1q2 = ratingmap.get(selectedRate);
     }
 
     public void setValueofRating3() {
-        if (rateq3.getSelectedItem().equals("1")) {
-            v1q3 = 1;
-        } else if (rateq3.getSelectedItem().equals("2")) {
-            v1q3 = 2;
-        } else if (rateq3.getSelectedItem().equals("3")) {
-            v1q3 = 3;
-        } else if (rateq3.getSelectedItem().equals("4")) {
-            v1q3 = 4;
-        } else if (rateq3.getSelectedItem().equals("5")) {
-            v1q3 = 5;
-        } else if (rateq3.getSelectedItem().equals("Rate")) {
-            v1q3 = 0;
-        }
+        String selectedRate = String.valueOf(rateq3.getSelectedItem());
+        v1q3 = ratingmap.get(selectedRate);
     }
 
     public void setValueofRating4() {
-        if (rateq4.getSelectedItem().equals("1")) {
-            v1q4 = 1;
-        } else if (rateq4.getSelectedItem().equals("2")) {
-            v1q4 = 2;
-        } else if (rateq4.getSelectedItem().equals("3")) {
-            v1q4 = 3;
-        } else if (rateq4.getSelectedItem().equals("4")) {
-            v1q4 = 4;
-        } else if (rateq4.getSelectedItem().equals("5")) {
-            v1q4 = 5;
-        } else if (rateq4.getSelectedItem().equals("Rate")) {
-            v1q4 = 0;
-        }
+        String selectedRate = String.valueOf(rateq4.getSelectedItem());
+        v1q4 = ratingmap.get(selectedRate);
     }
 
     public void setPanels() {

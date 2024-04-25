@@ -1,6 +1,8 @@
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
+import java.util.Map;
+import java.util.HashMap;
 
 public class Choice2 extends JFrame implements ActionListener {
     Container cp;
@@ -12,8 +14,10 @@ public class Choice2 extends JFrame implements ActionListener {
     JComboBox<String> rateq1, rateq2, rateq3, rateq4;
     int v1q1, v1q2, v1q3, v1q4, v2q1, v2q2, v2q3, v2q4, i1, i2, i3, i4;
     ResultCalcualtion printresult = new ResultCalcualtion();
+    Map<String, Integer> ratingmap;
 
     public Choice2(Choice1 v1) {
+        setRating();
         Initial();
         setComponent(v1);
         storeValue(v1);
@@ -128,68 +132,34 @@ public class Choice2 extends JFrame implements ActionListener {
         p5.setBackground(new Color(157, 178, 191));
     }
 
+    public void setRating() {
+        ratingmap = new HashMap<>();
+        ratingmap.put("rate", 0);
+        ratingmap.put("1", 1);
+        ratingmap.put("2", 2);
+        ratingmap.put("3", 3);
+        ratingmap.put("4", 4);
+        ratingmap.put("5", 5);
+    }
+
     public void setValueofRating1() {
-        if (rateq1.getSelectedItem().equals("1")) {
-            v2q1 = 1;
-        } else if (rateq1.getSelectedItem().equals("2")) {
-            v2q1 = 2;
-        } else if (rateq1.getSelectedItem().equals("3")) {
-            v2q1 = 3;
-        } else if (rateq1.getSelectedItem().equals("4")) {
-            v2q1 = 4;
-        } else if (rateq1.getSelectedItem().equals("5")) {
-            v2q1 = 5;
-        } else if (rateq1.getSelectedItem().equals("Rate")) {
-            v2q1 = 0;
-        }
+        String selectedRate = String.valueOf(rateq1.getSelectedItem());
+        v2q1 = ratingmap.get(selectedRate);
     }
 
     public void setValueofRating2() {
-        if (rateq2.getSelectedItem().equals("1")) {
-            v2q2 = 1;
-        } else if (rateq2.getSelectedItem().equals("2")) {
-            v2q2 = 2;
-        } else if (rateq2.getSelectedItem().equals("3")) {
-            v2q2 = 3;
-        } else if (rateq2.getSelectedItem().equals("4")) {
-            v2q2 = 4;
-        } else if (rateq2.getSelectedItem().equals("5")) {
-            v2q2 = 5;
-        } else if (rateq2.getSelectedItem().equals("Rate")) {
-            v2q2 = 0;
-        }
+        String selectedRate = String.valueOf(rateq2.getSelectedItem());
+        v2q2 = ratingmap.get(selectedRate);
     }
 
     public void setValueofRating3() {
-        if (rateq3.getSelectedItem().equals("1")) {
-            v2q3 = 1;
-        } else if (rateq3.getSelectedItem().equals("2")) {
-            v2q3 = 2;
-        } else if (rateq3.getSelectedItem().equals("3")) {
-            v2q3 = 3;
-        } else if (rateq3.getSelectedItem().equals("4")) {
-            v2q3 = 4;
-        } else if (rateq3.getSelectedItem().equals("5")) {
-            v2q3 = 5;
-        } else if (rateq3.getSelectedItem().equals("Rate")) {
-            v2q3 = 0;
-        }
+        String selectedRate = String.valueOf(rateq3.getSelectedItem());
+        v2q3 = ratingmap.get(selectedRate);
     }
 
     public void setValueofRating4() {
-        if (rateq4.getSelectedItem().equals("1")) {
-            v2q4 = 1;
-        } else if (rateq4.getSelectedItem().equals("2")) {
-            v2q4 = 2;
-        } else if (rateq4.getSelectedItem().equals("3")) {
-            v2q4 = 3;
-        } else if (rateq4.getSelectedItem().equals("4")) {
-            v2q4 = 4;
-        } else if (rateq4.getSelectedItem().equals("5")) {
-            v2q4 = 5;
-        } else if (rateq4.getSelectedItem().equals("Rate")) {
-            v2q4 = 0;
-        }
+        String selectedRate = String.valueOf(rateq4.getSelectedItem());
+        v2q4 = ratingmap.get(selectedRate);
     }
 
     public void storeValue(Choice1 v1) {

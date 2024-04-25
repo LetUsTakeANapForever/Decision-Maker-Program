@@ -27,16 +27,16 @@ public class Choice2 extends JFrame implements ActionListener {
     }
 
     public void setComponent(Choice1 v1) {
-        heading = new JLabel("<html>Decision Maker :<br/>Please rate \"Choice2\" regarding each quality<html/>");
+        heading = new JLabel("<html>Decision Maker :<br/>Please rate \"Choice2\" on each quality<html/>");
         heading.setFont(new Font("Arundina Sans", Font.BOLD, 33));
         heading.setForeground(new Color(39, 55, 77));
-        q1 = new JLabel(v1.q1toObj2 + "   :    ");
+        q1 = new JLabel(v1.qi1toC2 + "   :    ");
         q1.setFont(new Font("Arundina Sans", Font.BOLD, 30));
-        q2 = new JLabel(v1.q2toObj2 + "   :    ");
+        q2 = new JLabel(v1.qi2toC2 + "   :    ");
         q2.setFont(new Font("Arundina Sans", Font.BOLD, 30));
-        q3 = new JLabel(v1.q3toObj2 + "   :    ");
+        q3 = new JLabel(v1.qi3toC2 + "   :    ");
         q3.setFont(new Font("Arundina Sans", Font.BOLD, 30));
-        q4 = new JLabel(v1.q4toObj2 + "   :    ");
+        q4 = new JLabel(v1.qi4toC2 + "   :    ");
         q4.setFont(new Font("Arundina Sans", Font.BOLD, 30));
         rateq1 = new JComboBox<>();
         rateq1.addItem("Rate");
@@ -201,9 +201,5 @@ public class Choice2 extends JFrame implements ActionListener {
         this.v1q2 = v1.v1q2;
         this.v1q3 = v1.v1q3;
         this.v1q4 = v1.v1q4;
-    }
-
-    public void test() {
-        System.out.println(v1q1);
     }
 }

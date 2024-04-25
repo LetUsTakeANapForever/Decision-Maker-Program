@@ -7,15 +7,11 @@ public class Choice1 extends JFrame implements ActionListener {
     JPanel p0, p1, p2, p3, p4, p5;
     JButton next;
     JLabel heading;
-    QualityImportance qticlass;
     JLabel q1, q2, q3, q4;
     JComboBox<String> rateq1, rateq2, rateq3, rateq4;
-    String q1toObj2, q2toObj2, q3toObj2, q4toObj2;
+    String qi1toC2, qi2toC2, qi3toC2, qi4toC2;
     int v1q1, v1q2, v1q3, v1q4, i1, i2, i3, i4;
-
-    public Choice1() {
-    }
-
+    
     public Choice1(QualityImportance qticlass) {
         Initial();
         setComponent(qticlass);
@@ -29,16 +25,16 @@ public class Choice1 extends JFrame implements ActionListener {
     }
 
     public void setComponent(QualityImportance qticlass) {
-        heading = new JLabel("<html>Decision Maker :<br/>Please rate \"Choice1\" regarding each quality<html/>");
+        heading = new JLabel("<html>Decision Maker :<br/>Please rate \"Choice1\" on each quality<html/>");
         heading.setFont(new Font("Arundina Sans", Font.BOLD, 33));
         heading.setForeground(new Color(39, 55, 77));
-        q1 = new JLabel(qticlass.qtf1 + "   :    ");
+        q1 = new JLabel(qticlass.qi1.getText() + "   :    ");
         q1.setFont(new Font("Arundina Sans", Font.BOLD, 30));
-        q2 = new JLabel(qticlass.qtf2 + "   :    ");
+        q2 = new JLabel(qticlass.qi2.getText() + "   :    ");
         q2.setFont(new Font("Arundina Sans", Font.BOLD, 30));
-        q3 = new JLabel(qticlass.qtf3 + "   :    ");
+        q3 = new JLabel(qticlass.qi3.getText() + "   :    ");
         q3.setFont(new Font("Arundina Sans", Font.BOLD, 30));
-        q4 = new JLabel(qticlass.qtf4 + "   :    ");
+        q4 = new JLabel(qticlass.qi4.getText() + "   :    ");
         q4.setFont(new Font("Arundina Sans", Font.BOLD, 30));
         rateq1 = new JComboBox<>();
         rateq1.addItem("Rate");
@@ -54,7 +50,7 @@ public class Choice1 extends JFrame implements ActionListener {
             rateq3.addItem(i + "");
             rateq4.addItem(i + "");
         }
-        setExtentionFromQtclass(qticlass);
+        storeValueFromQ(qticlass);
         next = new JButton("Next");
         next.setBackground(new Color(82, 109, 130));
         next.setPreferredSize(new Dimension(80, 40));
@@ -194,11 +190,11 @@ public class Choice1 extends JFrame implements ActionListener {
         p5.setBackground(new Color(157, 178, 191));
     }
 
-    public void setExtentionFromQtclass(QualityImportance qticlass) {
-        q1toObj2 = qticlass.qtf1;
-        q2toObj2 = qticlass.qtf2;
-        q3toObj2 = qticlass.qtf3;
-        q4toObj2 = qticlass.qtf4;
+    public void storeValueFromQ(QualityImportance qticlass) {
+        qi1toC2 = qticlass.qi1.getText();
+        qi2toC2 = qticlass.qi2.getText();
+        qi3toC2 = qticlass.qi3.getText();
+        qi4toC2 = qticlass.qi4.getText();
         i1 = qticlass.q1;
         i2 = qticlass.q2;
         i3 = qticlass.q3;

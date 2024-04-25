@@ -1,20 +1,20 @@
 
 public class ResultCalcualtion {
-    private int q[] = new int[4], rate1[] = new int[4], rate2[] = new int[4], sum1, sum2;
+    private int qi[] = new int[4], rate1[] = new int[4], rate2[] = new int[4], sum1, sum2;
     private String st;
 
     public void resultOfSum(Choice2 valueOf) {
-        setq(valueOf);
+        setqi(valueOf);
         setrate1(valueOf);
         setrate2(valueOf);
         CalculateandCompareSum();
     }
 
-    public void setq(Choice2 valueOf) {
-        q[0] = valueOf.i1;
-        q[1] = valueOf.i2;
-        q[2] = valueOf.i3;
-        q[3] = valueOf.i4;
+    public void setqi(Choice2 valueOf) {
+        qi[0] = valueOf.i1;
+        qi[1] = valueOf.i2;
+        qi[2] = valueOf.i3;
+        qi[3] = valueOf.i4;
     }
 
     public void setrate1(Choice2 valueOf) {
@@ -33,15 +33,15 @@ public class ResultCalcualtion {
 
     public void CalculateandCompareSum() {
         for (int i = 0; i < 4; i++) {
-            sum1 += (q[i] * rate1[i]);
-            System.out.println(sum1);
-            sum2 += (q[i] * rate2[i]);
-            System.out.println(sum2);
+            sum1 += (qi[i] * rate1[i]);
+            sum2 += (qi[i] * rate2[i]);
         }
         if (sum1 > sum2)
-            st = "Choice 1";
+            st = "\"Choice 1\"";
+        else if (sum2 > sum1)
+            st = "\"Choice 2\"";
         else
-            st = "Choice 2";
+            st = "(Error)";
     }
 
     public String getSt() {

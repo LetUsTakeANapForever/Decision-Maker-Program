@@ -27,12 +27,12 @@ public class ResultReport extends JFrame implements ActionListener {
         // Choice1 total = 10
         // Choice2 total = 13
         sum = new JLabel(
-                "<html>Choice total = " + display.getSum1() + "<br/>Choice2 total = " + display.getSum2() + "</html>");
+                "<html>Choice1 total = " + display.getSum1() + "<br/>Choice2 total = " + display.getSum2() + "</html>");
         sum.setFont(new Font("Arundina Sans", Font.BOLD, 30));
         sum.setForeground(new Color(221, 230, 237));
-        l1 = new JLabel("<html>It seems like \"" + display.getSt()
-                + "\" meets most expectations of yours.<br/>Therefore, we suggest you choose<br/>\"" + display.getSt()
-                + "\" as your choice.</html>");
+        l1 = new JLabel("<html>It seems like " + display.getSt()
+                + " meets most expectations of yours.<br/>Therefore, we suggest you choose<br/>" + display.getSt()
+                + " as your choice.</html>");
         l1.setFont(new Font("Arundina Sans", Font.BOLD, 30));
         l1.setForeground(new Color(221, 230, 237));
         l2 = new JLabel("<html><br/>Thank you for using our program, we hope to see you again soon.</html>");

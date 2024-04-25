@@ -8,9 +8,8 @@ public class Choice2 extends JFrame implements ActionListener {
     Container cp;
     JPanel p0, p1, p2, p3, p4, p5;
     JButton result;
-    JLabel heading;
+    JLabel heading, q1, q2, q3, q4;
     Choice1 obj;
-    JLabel q1, q2, q3, q4;
     JComboBox<String> rateq1, rateq2, rateq3, rateq4;
     int v1q1, v1q2, v1q3, v1q4, v2q1, v2q2, v2q3, v2q4, i1, i2, i3, i4;
     ResultCalcualtion printresult = new ResultCalcualtion();

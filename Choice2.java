@@ -42,13 +42,13 @@ public class Choice2 extends JFrame implements ActionListener {
         q4 = new JLabel(v1.qi4toC2 + "   :    ");
         q4.setFont(new Font("Arundina Sans", Font.BOLD, 30));
         rateq1 = new JComboBox<>();
-        rateq1.addItem("Rate");
+        rateq1.addItem("rate");
         rateq2 = new JComboBox<>();
-        rateq2.addItem("Rate");
+        rateq2.addItem("rate");
         rateq3 = new JComboBox<>();
-        rateq3.addItem("Rate");
+        rateq3.addItem("rate");
         rateq4 = new JComboBox<>();
-        rateq4.addItem("Rate");
+        rateq4.addItem("rate");
         for (int i = 1; i < 6; i++) {
             rateq1.addItem(i + "");
             rateq2.addItem(i + "");

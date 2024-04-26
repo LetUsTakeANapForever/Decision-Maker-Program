@@ -12,7 +12,7 @@ public class Choice2 extends JFrame implements ActionListener {
     Choice1 obj;
     JComboBox<String> rateq1, rateq2, rateq3, rateq4;
     int v1q1, v1q2, v1q3, v1q4, v2q1, v2q2, v2q3, v2q4, i1, i2, i3, i4;
-    ResultCalcualtion printresult = new ResultCalcualtion();
+    ResultCalculation printresult = new ResultCalculation();
     Map<String, Integer> ratingmap;
 
     public Choice2(Choice1 v1) {

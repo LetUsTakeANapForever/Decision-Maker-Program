@@ -8,7 +8,7 @@ public class ResultReport extends JFrame implements ActionListener {
     JButton support;
     JLabel heading, l1, l2, sum;
 
-    public ResultReport(ResultCalcualtion display) {
+    public ResultReport(ResultCalculation display) {
         Initial();
         setComponent(display);
         Finally();
@@ -20,7 +20,7 @@ public class ResultReport extends JFrame implements ActionListener {
         setPanels();
     }
 
-    public void setComponent(ResultCalcualtion display) {
+    public void setComponent(ResultCalculation display) {
         heading = new JLabel("<html>Decision Maker :<br/>Result report</html>");
         heading.setFont(new Font("Arundina Sans", Font.BOLD, 36));
         heading.setForeground(new Color(221, 230, 237));
@@ -96,5 +96,4 @@ public class ResultReport extends JFrame implements ActionListener {
         p3.setBackground(new Color(82, 109, 130));
         p4.setBackground(new Color(82, 109, 130));
     }
-
 }

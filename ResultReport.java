@@ -24,8 +24,6 @@ public class ResultReport extends JFrame implements ActionListener {
         heading = new JLabel("<html>Decision Maker :<br/>Result report</html>");
         heading.setFont(new Font("Arundina Sans", Font.BOLD, 36));
         heading.setForeground(new Color(221, 230, 237));
-        // Choice1 total = 10
-        // Choice2 total = 13
         sum = new JLabel(
                 "<html>Choice1 total = " + display.getSum1() + "<br/>Choice2 total = " + display.getSum2() + "</html>");
         sum.setFont(new Font("Arundina Sans", Font.BOLD, 30));
